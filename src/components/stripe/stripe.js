@@ -17,7 +17,7 @@ export const Stripe = (props) => {
 
   return (
     <div id="stripe">
-      <button onClick={handleReset} id="reset">
+      <button onClick={()=>handleReset(level==='easy'?3:6)} id="reset">
         {buttonText}
       </button>
       <span id="message">{message}</span>

@@ -61,11 +61,11 @@ function App() {
 
   const changeDifficulty = (num) => {
     setNumSquares(num);
-    handleReset();
+    handleReset(num);
   };
 
-  const handleReset = () => {
-    setColors(generateRandomColors(numSquares));
+  const handleReset = (num) => {
+    setColors(generateRandomColors(num));
     setMessage("");
     setIsSuccess(false);
   };

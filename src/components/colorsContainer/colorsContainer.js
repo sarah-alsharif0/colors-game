@@ -1,15 +1,29 @@
 import React from "react";
-import '../colorsContainer/colorsContainer.css';
+import "../colorsContainer/colorsContainer.css";
 
-export const ColorsContainer = () => {
+export const ColorsContainer = (props) => {
+  const { colors, rgbCode, successfulTry, failedTry } = props;
+
+  const handleClick = (index) => {
+    var clickedColor = colors[index];
+
+    if (clickedColor === rgbCode) {
+      successfulTry();
+    } else {
+      failedTry(index);
+    }
+  };
+
   return (
     <div id="container">
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
+      {colors.map((item, index) => (
+        <div
+          key={index}
+          style={{ background: item }}
+          onClick={() => handleClick(index)}
+          className="square"
+        ></div>
+      ))}
     </div>
   );
 };

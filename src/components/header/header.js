@@ -1,14 +1,15 @@
 import React from "react";
-import '../header/header.css'
+import "../header/header.css";
 
 export const Header = (props) => {
-    const {color} = props;
+  const { rgbCode, isSuccess } = props;
+
   return (
     <div>
-      <h1>
+      <h1 style={{ background: isSuccess ? rgbCode : "" }}>
         The Great
         <br />
-        <span id="rgbCode">RGB{color}</span>
+        <span id="rgbCode">{rgbCode}</span>
         <br />
         Color Picking Game
       </h1>

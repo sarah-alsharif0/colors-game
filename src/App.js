@@ -61,7 +61,7 @@ function App() {
 
   const changeDifficulty = (num) => {
     setNumSquares(num);
-    setColors(generateRandomColors(num));
+    handleReset();
   };
 
   const handleReset = () => {
